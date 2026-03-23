@@ -30,7 +30,7 @@ public class Jugador_Movimiento : MonoBehaviour
 
    private Vector3 PosJ;
 
-   public MandoControl pad;
+   
 
 
 

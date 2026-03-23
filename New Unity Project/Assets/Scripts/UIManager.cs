@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 
     public bool pause = false;
 
+    public bool iniciado = true;
+
 
 
 
