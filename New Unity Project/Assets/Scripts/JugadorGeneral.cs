@@ -10,5 +10,11 @@ public class JugadorGeneral : MonoBehaviour
 
     public Transform hojacerca;
 
+    public bool spnext = true;
+
+    
+
+
+
 
 }

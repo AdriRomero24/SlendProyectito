@@ -11,14 +11,14 @@ public class TomarHojas : MonoBehaviour
 
     public LayerMask filtro;
 
-    public bool spnext = true;
 
+
+   
 
     void Update()
     {
-    
-
-        RaycastHit hitdata;
+        
+     RaycastHit hitdata;
 
         if (base.GetComponent<Renderer>().isVisible)
         {
@@ -47,7 +47,7 @@ public class TomarHojas : MonoBehaviour
         {
             
             ply.hojas++;
-            spnext = true;
+            ply.spnext = true;
             ply.hojacerca = null;
 
 
@@ -57,5 +57,6 @@ public class TomarHojas : MonoBehaviour
             Object.Destroy(base.gameObject);
 
         }
+
     }
 }

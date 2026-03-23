@@ -28,7 +28,7 @@ public class SpawndeHojas : MonoBehaviour
 
     private bool h1, h2, h3, h4, h5, h6, h7, h8;
 
-    public TomarHojas tom;
+    public JugadorGeneral tom;
 
 
     void Awake()
@@ -40,7 +40,7 @@ public class SpawndeHojas : MonoBehaviour
     void BuscarSpawn(Transform punto)
     {
       
-
+    
        GameObject [] cine = GameObject.FindGameObjectsWithTag("SpawnHojaCine");
        int scine = cine.Length;
 
@@ -107,6 +107,8 @@ public class SpawndeHojas : MonoBehaviour
                         
                         zonas++;
                         return;
+
+                        
                     }
                      scir--;
                   
@@ -288,9 +290,10 @@ public class SpawndeHojas : MonoBehaviour
        
 
       
+       if (tom.spnext){
+       
        do{
         
-        if (tom.spnext){
 
        switch (CualHoja)
         {
@@ -423,12 +426,16 @@ public class SpawndeHojas : MonoBehaviour
 
 
         }
-        }
+        
 
-         }while (h1 == false || h2 == false || h3 == false || h4 == false ||  h5 == false ||  h6 == false || h7 == false || h8 == false );
+         }while (tom.spnext);
+
+       }
 
        
     }
+
+
 
  
        
