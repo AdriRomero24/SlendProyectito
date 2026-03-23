@@ -30,6 +30,8 @@ public class Jugador_Movimiento : MonoBehaviour
 
    private Vector3 PosJ;
 
+   public MandoControl pad;
+
 
 
 
@@ -54,6 +56,8 @@ public class Jugador_Movimiento : MonoBehaviour
     void Update()
     {
         
+
+
       // Movimiento del jugador parte 1
 
       float horizontal = Input.GetAxisRaw("Horizontal");
@@ -67,7 +71,7 @@ public class Jugador_Movimiento : MonoBehaviour
       // Roatcion de la camara
 
        rotationX += Input.GetAxis("Mouse Y") * sensibilidadcam * -1;
-        
+       
 
        rotationX = Mathf.Clamp(rotationX, -LimiteCamY, LimiteCamY);
        
@@ -77,12 +81,13 @@ public class Jugador_Movimiento : MonoBehaviour
        // Rotación del jugador
 
        float rotationY = Input.GetAxis("Mouse X");
+     
       
 
       transform.Rotate(new Vector3(0, rotationY * velocidadrotacion * Time.deltaTime, 0));
 
        
-
+      
 
        // Salto del jugador Parte 1
         
