@@ -11,6 +11,8 @@ public class TomarHojas : MonoBehaviour
 
     public LayerMask filtro;
 
+    public bool spnext = true;
+
 
     void Update()
     {
@@ -45,6 +47,7 @@ public class TomarHojas : MonoBehaviour
         {
             
             ply.hojas++;
+            spnext = true;
             ply.hojacerca = null;
 
 

@@ -28,6 +28,8 @@ public class SpawndeHojas : MonoBehaviour
 
     private bool h1, h2, h3, h4, h5, h6, h7, h8;
 
+    public TomarHojas tom;
+
 
     void Awake()
     {
@@ -138,65 +140,7 @@ public class SpawndeHojas : MonoBehaviour
             
             case 4:
 
-           
-                    foreach (GameObject objp in pasillo1)
-                {
-                    if (Random.value <= 1f / (float)spasillo1)
-                    {
-                        punto.position = objp.transform.position;
-                        punto.rotation = objp.transform.rotation;
-
-                       Object.Destroy(objp);
-                        
-                        zonas++;
-                        return;
-                    }
-                     spasillo1--;
-                     
-                }
-
-               
-               
-
-                
-                break;
-
-            case 5:
-
-             
-               
-                
-               
-
-                break;
-
-            case 6:
-
-          
-                    
-                    foreach (GameObject obje in esq)
-                {
-                    if (Random.value <= 1f / (float)sesq)
-                    {
-                        punto.position = obje.transform.position;
-                        punto.rotation = obje.transform.rotation;
-
-                       Object.Destroy(obje);
-                       
-                       zonas++;
-                        return;
-                    }
-                     sesq--;
-                    
-                }
-                
-
-                break;
-
-            case 7:
-
-        
-                    foreach (GameObject objpb in pb1)
+              foreach (GameObject objpb in pb1)
                 {
                     if (Random.value <= 1f / (float)spb1)
                     {
@@ -213,13 +157,35 @@ public class SpawndeHojas : MonoBehaviour
                      spb1--;
                      
                 }
-                 
+     
                 break;
 
-            case 8: 
+            case 5:
 
-        
-                    foreach (GameObject objpb2 in pb2)
+                 foreach (GameObject objp in pasillo1)
+                {
+                    if (Random.value <= 1f / (float)spasillo1)
+                    {
+                        punto.position = objp.transform.position;
+                        punto.rotation = objp.transform.rotation;
+
+                       Object.Destroy(objp);
+                        
+                        zonas++;
+                        return;
+                    }
+                     spasillo1--;
+                     
+                }
+               
+                
+               
+
+                break;
+
+            case 6:
+
+                foreach (GameObject objpb2 in pb2)
                 {
                     if (Random.value <= 1f / (float)spb2)
                     {
@@ -228,7 +194,7 @@ public class SpawndeHojas : MonoBehaviour
 
                        Object.Destroy(objpb2);
 
-                       zonas = 1;
+                       zonas++ ;
                        return;
 
                     }
@@ -236,6 +202,52 @@ public class SpawndeHojas : MonoBehaviour
                     
                     
                 }
+                    
+                
+
+                break;
+
+            case 7:
+
+            foreach (GameObject obje in esq)
+                {
+                    if (Random.value <= 1f / (float)sesq)
+                    {
+                        punto.position = obje.transform.position;
+                        punto.rotation = obje.transform.rotation;
+
+                       Object.Destroy(obje);
+                       
+                       zonas++;
+                        return;
+                    }
+                     sesq--;
+                    
+                }
+                
+                 
+                break;
+
+            case 8: 
+
+        
+               foreach (GameObject objf in feria)
+                {
+                    if (Random.value <= 1f / (float)sferia)
+                    {
+                        punto.position = objf.transform.position;
+                        punto.rotation = objf.transform.rotation;
+
+                       Object.Destroy(objf);
+                      
+                      zonas = 1;
+                       return;
+
+                    }
+                     sferia--;
+                     
+                }
+
             
                 break;
 
@@ -274,7 +286,12 @@ public class SpawndeHojas : MonoBehaviour
 
         CualHoja = Random.Range(1,9);
        
+
+      
        do{
+        
+        if (tom.spnext){
+
        switch (CualHoja)
         {
           case 1:
@@ -282,6 +299,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h1){
             BuscarSpawn(Hoja1);
             h1 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -295,6 +313,7 @@ public class SpawndeHojas : MonoBehaviour
            if (!h2){
             BuscarSpawn(Hoja2);
             h2 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -309,6 +328,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h3){
             BuscarSpawn(Hoja3);
             h3 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -323,6 +343,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h4){
             BuscarSpawn(Hoja4);
             h4 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -337,6 +358,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h5){
             BuscarSpawn(Hoja5);
             h5 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -352,6 +374,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h6){
             BuscarSpawn(Hoja6);
             h6 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -366,6 +389,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h7){
             BuscarSpawn(Hoja7);
             h7 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -380,6 +404,7 @@ public class SpawndeHojas : MonoBehaviour
             if (!h8){
             BuscarSpawn(Hoja8);
             h8 = true;
+            tom.spnext = false;
             }
             else
                 {
@@ -391,15 +416,18 @@ public class SpawndeHojas : MonoBehaviour
 
             
             
-
+             
 
 
 
 
 
         }
+        }
 
-       }while (h1 == false || h2 == false || h3 == false || h4 == false ||  h5 == false ||  h6 == false || h7 == false || h8 == false );
+         }while (h1 == false || h2 == false || h3 == false || h4 == false ||  h5 == false ||  h6 == false || h7 == false || h8 == false );
+
+       
     }
 
  
