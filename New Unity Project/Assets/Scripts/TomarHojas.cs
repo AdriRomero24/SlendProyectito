@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class TomarHojas : MonoBehaviour
@@ -49,6 +50,33 @@ public class TomarHojas : MonoBehaviour
             ply.hojas++;
             ply.spnext = true;
             ply.hojacerca = null;
+            ply.muchotime = 15000;
+
+            if (ply.hojas < 8){
+
+                ply.nieblapunto = 0.02f + (float)ply.hojas * 0.01f;
+            }
+            else
+            {
+                ply.nieblapunto = 0.01f;
+            }
+            if(ply.nivel > 0)
+            {
+                ply.nivel--;
+            }
+            if (ply.hojas < 8)
+            {
+                ply.rangomax = 100 - (ply.hojas + ply.nivel) * 11;
+                ply.rangomin = 80 - (ply.hojas + ply.nivel) * 10;
+            
+            }
+            else
+            {
+                ply.rangomax = 20f;
+                ply.rangomin = 10f;
+                ply.delayfinal = 750;
+
+            }
 
 
 

@@ -22,6 +22,8 @@ public class JugadorGeneral : MonoBehaviour
 
     public bool pierde;
 
+    public int delayfinal;
+
     public int asustado;
 
     public bool visto ;
@@ -197,9 +199,10 @@ public class JugadorGeneral : MonoBehaviour
         {
             muchotime--;
 
-            if(muchotime <= 0){
+            if(muchotime <= 0 ){
                 
                 muchotime = 12000;
+                
             if(hojas + nivel < 9)
             {
                 nivel++;
