@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlederIA : MonoBehaviour
+public class SlenderIA : MonoBehaviour
 {
     
    public Transform jugador;
