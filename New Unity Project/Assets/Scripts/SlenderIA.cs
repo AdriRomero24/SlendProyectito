@@ -188,7 +188,14 @@ public class SlenderIA : MonoBehaviour
                         {
                             
                             vector2 = objprueba.position;
+
+                            if (jugador.position.y <= 1.0f){
                             vector2.y = 1f;
+                            }
+                            else if (jugador.position.y >= 9.40f)
+                            {
+                                vector2.y = 9.50f;
+                            }
                             base.transform.position = vector2;
                             movido = true;
                             ocupadomover = 0;
@@ -220,7 +227,13 @@ public class SlenderIA : MonoBehaviour
                             
 
                                 vector2 = objprueba.position;
+                           if (jugador.position.y <= 1.0f){
                             vector2.y = 1f;
+                            }
+                            else if (jugador.position.y >= 9.40f)
+                            {
+                                vector2.y = 9.50f;
+                            }
                             base.transform.position = vector2;
                             movido = true;
                             ocupadomover = 0;
